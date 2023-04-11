@@ -30,9 +30,9 @@ searchRefs.loadMore.addEventListener('click', onLoadMore)
         const {data} = await pixabayAPi.fetchCard();
 
         if(data.hits.length === 0){
-          return Notiflix.Notify.failure(
-            'Sorry, there are no images matching your TAG. Please try another TAG.'
-          );
+           Notiflix.Notify.failure(
+            'Sorry, there are no images matching your TAG. Please try another TAG.');
+          searchRefs.loadMore.classList.add('visually-hidden');
           return
         }
         if(pixabayAPi.page === 1) {
