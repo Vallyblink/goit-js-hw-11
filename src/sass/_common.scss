@@ -8,6 +8,10 @@ body {
   margin: 0;
   padding: 0;
 }
+a{
+  text-decoration: none;
+  
+}
 
 .header {
   background: $header-bg;
@@ -75,5 +79,48 @@ body {
     }
   }
 }
+main {
+  background-color: #f9f9f9;
+  
+  .gallery {
+    margin-top: 50px;
+    padding: 0;
 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+  margin-bottom: 50px;
+  border-radius: 15px;
+  cursor: pointer;
+  &:hover {
+        box-shadow: 3px 3px 5px -1px rgba(119, 119, 119, 0.75);
+    }
 
+}
+
+.card-img {
+    border-radius: 15px 15px 0px 0px;
+
+    object-fit: cover;
+    width: 300px;
+    height: 200px;
+}
+
+.info {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    font-size: 20px;
+    color: $search-text-color;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+}
