@@ -2,9 +2,10 @@ export function createCardMarkup (data){
   console.log(data)
   return data.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads}) =>  `
      <div class="card">
-     <a class="photo-card" href="${largeImageURL}">
-     <img class="photo-card-image" src="${webformatURL}" alt="${tags}" loading="lazy" />
-      <p class="info-item">
+     <a href="${largeImageURL}" onclick="event.preventDefault()" class="photo-link">
+      <img class="photo" src="${webformatURL}" alt="${tags}" loading="lazy" />
+       <div class="info">
+          <p class="info-item">
             <b>Likes</b> ${likes}
           </p>
           <p class="info-item">
@@ -16,7 +17,8 @@ export function createCardMarkup (data){
           <p class="info-item">
             <b>Downloads</b> ${downloads}
           </p>
-        </div>
+       </div>
+      </a>
       </div>`
      )
      .join('')

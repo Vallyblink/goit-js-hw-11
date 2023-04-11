@@ -7,6 +7,7 @@ import axios from "axios";
     page = 1;
     per_page = 40;
     q = '';
+    total = '';
    
     async fetchCard() {
       try {
@@ -24,7 +25,17 @@ import axios from "axios";
 
    }
 }
+resetPage() {
+  this.page = 1;
+}
 
+incrementPage() {
+  this.page += 1;
+}
+
+setTotal(total) {
+  this.totalImages = total;
+}
 
 }
 
