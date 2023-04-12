@@ -18,7 +18,7 @@ searchRefs.loadMore.addEventListener('click', onLoadMore)
   async function onSearchForm(e){
     e.preventDefault();
     clearMarkup()
-
+    pixabayAPi.resetPage();
     const seeCard = e.target.elements['searchQuery'].value.trim();
     console.log (seeCard)
     pixabayAPi.q = seeCard.trim();
@@ -38,15 +38,18 @@ searchRefs.loadMore.addEventListener('click', onLoadMore)
         if(pixabayAPi.page === 1) {
           Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`);
       }
+        
         searchRefs.gallery.insertAdjacentHTML('beforeend', createCardMarkup(data.hits));
         searchRefs.loadMore.classList.remove('visually-hidden');
+       
         gallery.refresh()
       }
       catch(error){
         return Notiflix.Notify.failure(
           'Something wrong! ALARM MO^&*$&^&R'
         )
-      }
+      } 
+      
 }
 async function onLoadMore(e){
   const seeCard = searchRefs.searchForm.elements['searchQuery'].value.trim();
